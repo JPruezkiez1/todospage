@@ -1,25 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TodoCounter } from '../TodoCounter/TodoCounter';
 import { TodoSearch } from '../TodoSearch/TodoSearch.js';
 import { TodoList } from '../TodoList/TodoList.js';
 import { TodoItem } from '../TodoItem/TodoItem.js';
 import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton.js';
+import { TodoContext } from '../TodoContext'; // Make sure to import the context
 import '../arcilag.css';
 
-function AppTasks({
-    loading,
-    error,
-    completedtodos,
-    totaltodos,
-    searchValue,
-    handleToggleComplete,
-    handleDelete,
-    searchedTodos,
-    todos,
-    handleCreateTodo,
-    completedtodos2,
-    setSearchValue,
-}) {
+function AppTasks() {
+    const {
+        loading,
+        error,
+        completedtodos,
+        totaltodos,
+        searchValue,
+        handleToggleComplete,
+        handleDelete,
+        searchedTodos,
+        todos,
+        handleCreateTodo,
+        completedtodos2,
+        setSearchValue,
+    } = useContext(TodoContext); // Use the context here
+
     const [tab, setTab] = React.useState('TODOLIST');
 
     return (
@@ -77,6 +80,7 @@ function AppTasks({
                         <img src='https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg' alt='Arcilag faces' width="500" height='600' />
                     </div>
                 </React.Fragment>
+
             )}
         </>
     );
