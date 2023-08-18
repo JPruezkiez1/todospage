@@ -1,27 +1,15 @@
 import React from 'react';
-import { TodoCounter } from '../TodoCounter/TodoCounter';
-import { TodoSearch } from '../TodoSearch/TodoSearch.js';
-import { TodoList } from '../TodoList/TodoList.js';
-import { TodoItem } from '../TodoItem/TodoItem.js';
-import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton.js';
-import '../arcilag.css'
 import { useLocalStorage } from './useLocalStorage.js';
+import { AppTasks } from './AppTasks.js';
 
 
 
 const defaultTodos = [
   { text: 'Task Sample. Check it to complete it!', completed: false },
 ];
-
-
-
-
-
 function App() {
 
   //////////////////// tercera VIST//////////
-
-  const [tab, setTab] = React.useState('TODOLIST');
   // Initialize todos state using the useLocalStorage hook,
   // with 'TODOS_V1' as the storage key and defaultTodos as the initial value
   const [todos, setTodos] = useLocalStorage('TODOS_V1', defaultTodos);
@@ -69,61 +57,18 @@ function App() {
 
   // Render the components and UI
   return (
-    <>
-      <header>
-        <button className='todolistbtn' onClick={() => setTab('TODOLIST')}> All Tasks</button>
-        <button className='gatitochanbtn' onClick={() => setTab('GATITOCHAN')}> Completed Taks</button>
-        <button className='testiepagebtn' onClick={() => setTab('TESTIEPAGE')}> Pending section!!</button>
-      </header>
-
-      {tab === 'TODOLIST' ? (
-        <React.Fragment>
-
-          <TodoCounter completed={completedtodos} total={totaltodos} />
-          <TodoSearch
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
-          {/* <div className='TODOLISTBLOCK'> */}
-          <TodoList>
-            {searchedTodos.map(todo => (
-              <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onToggleComplete={handleToggleComplete}
-                onDelete={handleDelete}
-              />
-            ))}
-          </TodoList>
-          {/* </div> */}
-          <CreateTodoButton todos={todos} onCreateTodo={handleCreateTodo} />
-        </React.Fragment>
-
-      ) : tab === 'GATITOCHAN' ? (
-        <TodoList>
-          {completedtodos2.map(todo => (
-            <TodoItem
-              key={todo.text}
-              text={todo.text}
-              completed={todo.completed}
-              onToggleComplete={handleToggleComplete}
-              onDelete={handleDelete}
-            />
-          ))}
-        </TodoList>
-      ) : (
-
-        <React.Fragment>
-          <div className='arcilagtest'>
-
-            <h1 >Arcilag Photo ID below!!</h1>
-            <img src='https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg' alt='Arcilag faces' width="500" height='600' ></img>
-          </div>
-        </React.Fragment>
-      )}
-    </>
-
+    <AppTasks
+      completedtodos={completedtodos}
+      totaltodos={totaltodos}
+      searchValue={searchValue}
+      handleToggleComplete={handleToggleComplete}
+      handleDelete={handleDelete}
+      searchedTodos={searchedTodos}
+      todos={todos}
+      handleCreateTodo={handleCreateTodo}
+      completedtodos2={completedtodos2}
+      setSearchValue={setSearchValue}
+    />
   );
 }
 
