@@ -1,10 +1,11 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter/TodoCounter';
-import { TodoSearch } from './TodoSearch/TodoSearch';
-import { TodoList } from './TodoList/TodoList';
-import { TodoItem } from './TodoItem/TodoItem';
-import { CreateTodoButton } from './CreateTodoButton/CreateTodoButton';
-import './arcilag.css'
+import { TodoCounter } from '../TodoCounter/TodoCounter';
+import { TodoSearch } from '../TodoSearch/TodoSearch.js';
+import { TodoList } from '../TodoList/TodoList.js';
+import { TodoItem } from '../TodoItem/TodoItem.js';
+import { CreateTodoButton } from '../CreateTodoButton/CreateTodoButton.js';
+import '../arcilag.css'
+import { useLocalStorage } from './useLocalStorage.js';
 
 
 
@@ -12,25 +13,7 @@ const defaultTodos = [
   { text: 'Task Sample. Check it to complete it!', completed: false },
 ];
 
-function useLocalStorage(itemName, initialValue) {
-  const localStorageItem = localStorage.getItem(itemName);
-  let parsedItem;
 
-  try {
-    parsedItem = JSON.parse(localStorageItem);
-  } catch (error) {
-    console.error(`Error parsing ${itemName} from localStorage:`, error);
-  }
-
-  const [item, setItem] = React.useState(parsedItem || initialValue);
-
-  const saveItem = newItem => {
-    localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem);
-  };
-
-  return [item, saveItem];
-}
 
 
 
