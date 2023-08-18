@@ -1,0 +1,73 @@
+.TodoItem {
+  background-color: #FAFAFA;
+  /* position: relative; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px; */
+  /* gap: 10px; */
+  height: 60px;
+  width: auto;
+  /* box-shadow: 0px 20px 30px rgba(32, 35, 41, 0.15); */
+
+}
+
+.TodoItem-p {
+  margin: 24px 0 24px 24px;
+  width: calc(100% - 120px);
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.TodoItem-p--complete {
+  text-decoration: burlywood;
+  color: rgb(0, 136, 255);
+  font-weight: bold;
+}
+
+.Icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  width: 38px;
+  font-size: 24px;
+  font-weight: bold;
+  /* background-color: #CCC; */
+}
+
+.Icon-check {
+  position: initial;
+  left: 12px;
+  color: gray;
+}
+
+.Icon-check--active {
+  color: #00ff08;
+}
+
+.Icon-check:hover {
+  position: initial;
+  left: 12px;
+  color: rgb(51, 233, 14);
+}
+
+.Icon-check--active:hover {
+  color: gray;
+}
+
+
+.Icon-delete {
+  position: initial;
+  right: 12px;
+  color: gray;
+}
+
+.Icon-delete:hover {
+  color: red;
+}
