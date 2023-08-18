@@ -18,8 +18,9 @@ function TodoItem(props) {
         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
         onClick={handleToggleComplete}
       />
-      <p maxlength="80" className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
+      <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
         {props.text}
+
       </p>
       <DELETEICON className="Icon Icon-delete" onClick={handleDelete} />
     </li>

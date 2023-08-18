@@ -1,4 +1,8 @@
 .arcilagtest {
-    background-color: aqua;
-
+    background: aqua;
+    width: fit-content;
+    height: fit-content;
+    /* display: flex; */
+    margin: 30px;
+    gap: 30px;
 }

@@ -133,7 +133,11 @@ function App() {
       ) : (
 
         <React.Fragment>
-          <h1>Arcilag the gay!!</h1>
+          <div className='arcilagtest'>
+
+            <h1 >Arcilag Photo ID below!!</h1>
+            <img src='https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg' alt='Arcilag faces' width="500" height='600' ></img>
+          </div>
         </React.Fragment>
       )}
     </>

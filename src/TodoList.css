@@ -2,7 +2,8 @@
   all: unset;
   list-style: none;
   color: rgb(0, 0, 0);
-  background: red;
+  background: #F2F4F5;
+  ;
   margin-left: 35px;
   margin-right: 35px;
 }
