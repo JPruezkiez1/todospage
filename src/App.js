@@ -1,11 +1,10 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCounter } from './TodoCounter/TodoCounter';
+import { TodoSearch } from './TodoSearch/TodoSearch';
+import { TodoList } from './TodoList/TodoList';
+import { TodoItem } from './TodoItem/TodoItem';
+import { CreateTodoButton } from './CreateTodoButton/CreateTodoButton';
 import './arcilag.css'
-import './todolistblock.css'
 
 
 

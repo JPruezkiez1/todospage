@@ -6,4 +6,4 @@ function COMPLETEICON(props) {
     <AiOutlineCheckCircle {...props} />
   );
 }
-export {COMPLETEICON};
+export { COMPLETEICON };
