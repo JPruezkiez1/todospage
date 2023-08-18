@@ -115,7 +115,7 @@ function App() {
             ))}
           </TodoList>
           {/* </div> */}
-          <CreateTodoButton onCreateTodo={handleCreateTodo} />
+          <CreateTodoButton todos={todos} onCreateTodo={handleCreateTodo} />
         </React.Fragment>
 
       ) : tab === 'GATITOCHAN' ? (
