@@ -1,7 +1,7 @@
 import React from 'react';
 import './TodoItem.css';
-import {COMPLETEICON} from './completeicon'; // Import the CompleteIcon component
-import {DELETEICON} from './deleteicon'; // Import the DeleteIcon component
+import { COMPLETEICON } from './completeicon'; // Import the CompleteIcon component
+import { DELETEICON } from './deleteicon'; // Import the DeleteIcon component
 
 function TodoItem(props) {
   const handleToggleComplete = () => {
@@ -15,10 +15,10 @@ function TodoItem(props) {
   return (
     <li className="TodoItem">
       <COMPLETEICON
-         className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
-         onClick={handleToggleComplete}
+        className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
+        onClick={handleToggleComplete}
       />
-      <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
+      <p maxlength="80" className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
         {props.text}
       </p>
       <DELETEICON className="Icon Icon-delete" onClick={handleDelete} />
