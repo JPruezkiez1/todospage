@@ -1,13 +1,16 @@
 import './CreateTodoButton.css';
 import React from 'react';
-function CreateTodoButton({ onCreateTodo }) {
+
+function CreateTodoButton({ todos, onCreateTodo }) {
   const handleCreateTodo = () => {
     const taskName = window.prompt('Enter the task name:');
-    if (taskName) {
+    if (taskName && !todos.some(todo => todo.text === taskName)) {
       onCreateTodo({
         text: taskName,
         completed: false,
       });
+    } else if (taskName) {
+      window.alert('Task with the same name already exists.');
     }
   };
 
@@ -17,6 +20,5 @@ function CreateTodoButton({ onCreateTodo }) {
     </button>
   );
 }
-
 
 export { CreateTodoButton };
